@@ -1,0 +1,157 @@
+@mixin clearfix {
+    *zoom: 1;
+    zoom: 1;
+    &:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+// 一行超出省略号
+@mixin rowOverflow {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+// skew set
+@mixin skewSet($xval, $yval) {
+    -ms-transform: skew($xval, $yval);
+    /* IE 9 */
+    -moz-transform: skew($xval, $yval);
+    /* Firefox */
+    -webkit-transform: skew($xval, $yval);
+    /* Safari 和 Chrome */
+    -o-transform: skew($xval, $yval);
+    /* Opera */
+    transform: skew($xval, $yval);
+}
+
+// auto height
+@mixin autoHeight($val) {
+    min-height: $val;
+    height: auto !important;
+    _height: $val;
+}
+
+// opacity
+@mixin opacitySet($val) {
+    -webkit-opacity: $val;
+    -moz-opacity: $val;
+    -ms-opacity: $val;
+    -o-opacity: $val;
+    opacity: $val;
+    filter: alpha(opacity=$val*100);
+}
+
+// border-radius
+@mixin radiusSet($val) {
+    -moz-border-radius: $val;
+    -webkit-border-radius: $val;
+    -o-border-radius: $val;
+    -ms-border-radius: $val;
+    -khtml-border-radius: $val;
+    border-radius: $val;
+}
+
+// border-radius 4个角落
+@mixin fourRadiusSet($val1, $val2, $val3, $val4) {
+    -moz-border-radius: $val1 $val2 $val3 $val4;
+    -webkit-border-radius: $val1 $val2 $val3 $val4;
+    -o-border-radius: $val1 $val2 $val3 $val4;
+    -ms-border-radius: $val1 $val2 $val3 $val4;
+    -khtml-border-radius: $val1 $val2 $val3 $val4;
+    border-radius: $val1 $val2 $val3 $val4;
+}
+
+//上下渐变
+@mixin gradient($color1, $color2) {
+    // filter: alpha(opacity=100 finishopacity=50 style=1 startx=0, starty=0, finishx=0, finishy=150) progid: DXImageTransform.Microsoft.gradient(startcolorstr=$color1, endcolorstr=$color2, gradientType=1);
+    // -ms-filter: alpha(opacity=100 finishopacity=50 style=1 startx=0, starty=0, finishx=0, finishy=150) progid: DXImageTransform.Microsoft.gradient(startcolorstr=$color1, endcolorstr=$color2, gradientType=1);
+    /*IE8*/
+    background: $color2;
+    /* 一些不支持背景渐变的浏览器 */
+    background: -webkit-linear-gradient($color1, $color2);
+    background: -o-linear-gradient( $color1, $color2);
+    background: -moz-linear-gradient( $color1, $color2);
+    background: linear-gradient( $color1, $color2);
+}
+
+//左右渐变
+@mixin gradientLeft($color1, $color2) {
+    // filter: alpha(opacity=100 finishopacity=50 style=1 startx=0, starty=0, finishx=0, finishy=150) progid: DXImageTransform.Microsoft.gradient(startcolorstr=$color1, endcolorstr=$color2, gradientType=0);
+    // -ms-filter: alpha(opacity=100 finishopacity=50 style=1 startx=0, starty=0, finishx=0, finishy=150) progid: DXImageTransform.Microsoft.gradient(startcolorstr=$color1, endcolorstr=$color2, gradientType=0);
+    /*IE8*/
+    background: $color2;
+    /* 一些不支持背景渐变的浏览器 */
+    background: -webkit-linear-gradient(left, $color1, $color2);
+    background: -o-linear-gradient(left, $color1, $color2);
+    background: -moz-linear-gradient(left, $color1, $color2);
+    background: linear-gradient(left, $color1, $color2);
+}
+
+//transition
+@mixin transition($val) {
+    -webkit-transition: all $val;
+    -moz-transition: all $val;
+    -ms-transition: all $val;
+    -o-transition: all $val;
+    transition: all $val;
+}
+
+//设置文字不能被选中
+@mixin noSelect() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+// 多行超出省略号
+@mixin moreRowOverflow($num) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
+
+@mixin borderBoxSet {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+%transition {
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+%speakhi_ffnum {
+    font-family: "Calibri", "simsun";
+}
+
+@mixin rotate($num) {
+    transform: rotate($num);
+    -ms-transform: rotate($num);
+    /* IE 9 */
+    -moz-transform: rotate($num);
+    /* Firefox */
+    -webkit-transform: rotate($num);
+    /* Safari 和 Chrome */
+    -o-transform: rotate($num);
+    /* Opera */
+}
+
+@mixin scale($num) {
+    transform: scale($num); //设置缩放比例
+    -ms-transform: scale($num);
+    -webkit-transform: scale($num);
+    -o-transform: scale($num);
+    -moz-transform: scale($num);
+}

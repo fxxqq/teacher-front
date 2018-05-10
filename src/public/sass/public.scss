@@ -1,0 +1,50 @@
+//教师端登录页面弹窗公用样式
+.hi-sure-pop {
+    animation: none!important;
+    width: auto;
+    max-width: 478px;
+    .swal-icon {
+        margin: 0;
+    }
+    .swal-text {
+        color: #626262;
+        text-align: center;
+        padding: 0 50px;
+        white-space: nowrap;
+    }
+    .swal-button {
+        background: #40A9F6;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .swal-footer {
+        text-align: center;
+    }
+}
+
+.none {
+    display: none;
+}
+
+//教师端每个page title的样式
+.el-header {
+    padding: 0;
+}
+
+.el-main {
+    .teacher-center {
+        background: #fff;
+    }
+    .page-title {
+        font-size: 18px;
+        color: #006FBC;
+        font-weight: 700;
+        padding: 20px 0;
+        border-bottom: 1px solid #ECECEC;
+        .name {
+            border-left: 4px #006FBC solid;
+            padding-left: 16px;
+        }
+    }
+}

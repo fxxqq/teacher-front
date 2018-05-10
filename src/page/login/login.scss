@@ -1,0 +1,107 @@
+.login-page {
+    font-size: 28px;
+}
+
+.homepage-hero-module,
+.video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.homepage-hero-module {
+    .login-ruleForm {
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 420px;
+        height: 450px;
+        margin-left: -210px;
+        margin-top: -225px;
+        .login-box {
+            height: 380px;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, .25);
+            border: 1px solid rgba(255, 255, 255, .8);
+            box-shadow: 0 0 10px 0 rgba(255, 255, 255, .62);
+            .logo {
+                width: 160px;
+                margin: 40px auto;
+                img {
+                    width: 100%;
+                }
+            }
+            .el-form-item {
+                padding: 0 30px;
+                .el-input {
+                    /deep/ input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0px 1000px white inset;
+                        border: 1px solid #CCC;
+                        @include radiusSet(6px);
+                        border-radius: 0 4px 4px 0;
+                    }
+                    //修改ui框架input的样式
+                    /deep/ input.el-input__inner {
+                        height: 44px;
+                        line-height: 44px;
+                        padding: 0 15px;
+                        box-sizing: border-box;
+                        font-size: 18px;
+                        @include radiusSet(6px);
+                        color: #fff!important;
+                        border: none;
+                        background: rgba(0, 0, 0, .3)!important;
+                    }
+                }
+            }
+            .el-button {
+                background: #006FBC;
+                border-color: #006FBC;
+                width: 100%;
+                margin-top: 20px;
+                height: 44px;
+                line-height: 44px;
+                @include radiusSet(4px);
+                font-size: 18px;
+                padding: 0;
+                &:hover {
+                    background: #0076df;
+                    border-color: #0076df;
+                }
+            }
+        }
+        .copyright {
+            margin-top: 30px;
+            p {
+                text-align: center;
+                font-size: 12px;
+                height: 24px;
+                line-height: 24px;
+                color: #FFF;
+                a {
+                    color: #fff;
+                }
+                .record-icon {
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    background: url('./img/record-icon.png');
+                    background-size: cover;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+.video-container .poster img,
+.video-container video {
+    z-index: 0;
+    position: absolute;
+}
+
+.video-container .filter {
+    z-index: 1;
+    position: absolute;
+}
